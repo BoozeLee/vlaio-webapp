@@ -212,9 +212,9 @@ export function VLAIODemo() {
               <button 
                 onClick={handleNeuroforgeDemo}
                 className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50"
-                disabled={neuroforgeStatus.status === "running"}
+                disabled={loading.neuroforge || loading.trendforge}
               >
-                {neuroforgeStatus.status === "running" ? "Running Demo..." : "Run NeuroForge Demo"}
+                {loading.neuroforge ? "Running Demo..." : "Run NeuroForge Demo"}
               </button>
             </div>
           </div>
@@ -305,9 +305,9 @@ export function VLAIODemo() {
               <button 
                 onClick={handleTrendforgeDemo}
                 className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50"
-                disabled={trendforgeStatus.status === "running"}
+                disabled={loading.trendforge || loading.neuroforge}
               >
-                {trendforgeStatus.status === "running" ? "Running Research..." : "Run TrendForge Demo"}
+                {loading.trendforge ? "Running Research..." : "Run TrendForge Demo"}
               </button>
             </div>
           </div>
@@ -324,8 +324,8 @@ export function VLAIODemo() {
             <div className="space-y-2">
               {demoLogs.map((log, index) => (
                 <div key={index} className="flex justify-between text-sm text-gray-600 dark:text-gray-300 border-b pb-1 last:border-b-0">
-                  <span>[${log.time}]</span>
-                  <span>${log.message}</span>
+                  <span>[{log.time}]</span>
+                  <span>{log.message}</span>
                 </div>
               ))}
             </div>
