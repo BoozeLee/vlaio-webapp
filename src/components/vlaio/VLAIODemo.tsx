@@ -192,11 +192,11 @@ export function VLAIODemo() {
                 <h3 className="font-medium mb-3">Membrane Potential Visualization</h3>
                 <div className="relative h-40 w-full bg-gray-200 dark:bg-gray-600 rounded-lg overflow-hidden">
                   {/* Threshold line */}
-                  <div className={`absolute left-0 right-0 h-0.5 bg-red-500 
-                    top-[${((1 - neuroforgeStatus.threshold) * 100)}%]`}></div>
+                  <div className="absolute left-0 right-0 h-0.5 bg-red-500"
+                    style={{ top: `${(1 - neuroforgeStatus.threshold) * 100}%` }}></div>
                   {/* Membrane potential */}
-                  <div className={`absolute left-0 right-0 h-0.5 bg-blue-500 
-                    top-[${((1 - neuroforgeStatus.membranePotential) * 100)}%]`}></div>
+                  <div className="absolute left-0 right-0 h-0.5 bg-blue-500"
+                    style={{ top: `${(1 - neuroforgeStatus.membranePotential) * 100}%` }}></div>
                   {/* Firing indicator */}
                   {neuroforgeStatus.firing && (
                     <div className="absolute inset-0 bg-red-500/20 animate-pulse"></div>
