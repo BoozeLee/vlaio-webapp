@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VLAIO Innovation Demo
 
-## Getting Started
+A Next.js demo site for presenting NeuroForge and TrendForge concepts in a VLAIO-style innovation context. The app is intentionally small: it focuses on a clear public-facing narrative, responsive UI, and Solana/agent integrations that can be explained quickly during portfolio reviews.
 
-First, run the development server:
+## What It Demonstrates
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js App Router project structure with TypeScript.
+- Public innovation landing pages for AI agent concepts.
+- Wallet and Solana integration dependencies prepared for interactive demos.
+- Clean deployment path for Vercel-hosted portfolio demos.
+- Concise project scope suitable for internship and job applications.
+
+## Stack
+
+- **Framework:** Next.js, React, TypeScript
+- **Styling:** Tailwind CSS
+- **Blockchain integration:** `@solana/web3.js`, SPL Token, wallet adapter packages
+- **HTTP:** Axios
+- **Quality gates:** ESLint and production build
+
+## Project Structure
+
+```text
+app/
+├── page.tsx              # Main public page
+├── vlaio/page.tsx        # VLAIO-specific demo route
+├── layout.tsx            # App shell
+└── globals.css           # Global styles
+
+src/
+├── app/page.tsx          # Alternate page implementation
+├── components/vlaio/     # Demo components
+└── lib/api.ts            # API helper code
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open:
 
-## Learn More
+```text
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Validation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run these before making the repository public-facing or deploying:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+npm run build
+```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repository is intended for Vercel deployment. Keep environment-specific secrets in Vercel project settings or local `.env.local`; do not commit secrets.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Status
+
+Portfolio demo. This repo is public because it is small, readable, and focused on explaining applied AI/agent concepts to non-specialist reviewers.
