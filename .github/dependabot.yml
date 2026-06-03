@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/Brussels"
+    open-pull-requests-limit: 10
+    groups:
+      solana:
+        patterns:
+          - "@solana/*"
+          - "@solana-mobile/*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      lint:
+        patterns:
+          - "eslint"
+          - "eslint-config-next"
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
